@@ -1,0 +1,284 @@
+---
+title: "A2"
+output: 
+  html_document:
+    number_sections: no
+    highlight: tango
+    theme: paper
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smmoth_scroll: no
+  pdf_document:
+    toc: yes
+---
+# Setando o ambiente
+```{r message=FALSE, warning=FALSE}
+Sys.setlocale("LC_CTYPE", "pt_BR.UTF-8")
+if (!require("tidyverse")) install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+if (!require("dplyr")) install.packages("dplyr", repos = "http://cran.us.r-project.org")
+if (!require("lubridate")) install.packages("lubridate", repos = "http://cran.us.r-project.org")
+if (!require("svglite")) install.packages("svglite", repos = "http://cran.us.r-project.org")
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(svglite)
+custom_theme <- theme_bw() + theme(panel.grid = element_blank(), 
+                                   plot.title = element_text(hjust = 0.5, face = "bold"),
+                                   plot.background = element_rect(fill = "#F1F4ED"),
+                                   panel.background = element_rect(fill = "#F1F4ED"),
+                                   panel.border = element_blank())
+theme_set(custom_theme)
+```
+
+# The Office Database
+The Office é uma série de televisão que estreou em 2005 nos EUA. É uma série no estilo de um documentário, no entanto, devido as situações irônicas e adversas que as personagens se encontram na série, a série tem um caráter de humor peculiar. O protagonista da série é Michael Scott, o qual é gerente regional de uma empresa de papel chamada Dunder Mifflin, e a maior parte do documentário relata o cotidiano nesse escritório e por isso a série se chama The Office.
+The office é uma das minhas séries favoritas, e procurando bases de dados pelo kaggle, encontrei uma base de dados sobre The Office e vi a oportunidade de realizar uma visualização com algo que me chamava atenção.
+
+# 1. Parte A
+
+## Explorando a base da dados
+Antes de formular hipoteses sobre quais perguntas gostaria de responder, acho importante explorar a base de dados para assim saber com quais tipos de dados estamos lidando.
+```{r paged.print=TRUE}
+theofficedf <- read.csv("the_office_series.csv", sep = ";")
+```
+
+```{r}
+colnames(theofficedf)
+```
+
+No entanto, podemos ver que nossa base de dados tem informações tais como "Ratings", a qual contêm a nota do IMDB, "date", com a data a qual cada episódio foi lançado, "Director" com cada um dos diretores, "Total" com o total de visualizações. Essas informações já nos dão indicios que conseguiremos extrair boas visualizações dessa base de dados.
+
+## Formulando Hipoteses
+A partir dessa prévia análise sobre a base de dados, podemos realizar já algumas perguntas a qual poderão ser respondidados com a base de dados:
+- Qual temporada teve mais telespectadores no total?
+- Qual temporada teve mais telespectadores por episódio?
+- Como foram as notas do IMDB por episódio?
+- Os episódios com "GuestStars" tem mais visualizações?
+- Qual diretor tem mais visualizações?
+
+De modo a responder essas perguntas, organizaremos nossa base de dados de modo a ficar mais fácil possível a nossa representação.
+
+# 2. Parte B - Análise Exploratória dos Dados
+
+## Organização da base de dados
+
+Algo que nos ajudará muito, será transformar as datas as quais utilizamos em nossa nossa base de dados, além de transformar em os dados da coluna episódios e temporadas em dados categóricos, pois assim, será mais fácil de futuramente trabalhar com ele.
+```{r}
+theofficedf$Date <- format(dmy(theofficedf$Date), "%d/%m/%Y")
+theofficedf$Episodes <- factor(theofficedf$Episodes, levels = unique(theofficedf$Episodes))
+theofficedf$Season <- factor(theofficedf$Season, levels = unique(theofficedf$Season))
+```
+
+
+## Primeiros gráficos
+
+Vamos começar plotando alguns gráficos simples, tais como agrupar os dados por temporada, além de extrair a média de visualizações por temporada.
+
+```{r}
+por_temp <- theofficedf %>% 
+  group_by(Season) %>% summarise(Visualizacoes = sum(Viewership), media= mean(Viewership))
+por_temp
+```
+```{r}
+graf_visu_por_temp <- ggplot(por_temp, aes(x = Season, y = Visualizacoes)) + geom_col()
+graf_visu_por_temp 
+```
+```{r}
+graf_media_visu_por_temp <- ggplot(por_temp, aes(x = Season, y = media, fill = Season)) + geom_col()
+graf_media_visu_por_temp
+```
+
+Vamos também analisar como foi a distribuição de visualizações em algumas temporadas:
+```{r}
+theofficedf$Season <- as.character(theofficedf$Season)
+graf_visu_por_ep <- ggplot(theofficedf, aes(x = Season, y = Viewership, fill = Season)) + geom_boxplot()
+graf_visu_por_ep 
+```
+
+### Trabalhando com os diretores
+Vamos analisar quais diretores foram melhores avaliados, tanto em relação a média do público, mas também em relação a crítica do IMDB. 
+Primeiramente, vamos separar nossa "base de dados"
+```{r}
+por_dir <- theofficedf %>% 
+  group_by(Director) %>% 
+  summarise(Visualizacoes = sum(Viewership), numero = n()) %>% 
+  arrange(desc(Visualizacoes)) %>% 
+  head(9) %>% 
+  arrange(desc(Visualizacoes)) %>% 
+  mutate(Director = reorder(Director, -Visualizacoes, FUN = max))
+por_dir$media <- por_dir$Visualizacoes/por_dir$numero
+por_dir <- arrange(por_dir, desc(media))
+por_dir
+```
+
+Com ela separada, basta plotarmos o gráfico
+```{r}
+graf_dire_por_ep <- ggplot(por_dir, aes(x = reorder(Director, media), y = media, fill = Director)) + geom_col()
+
+graf_dire_por_ep 
+```
+Já pela média do IMDB, precisaremos "separar" nossa base de dados novamente.
+
+```{r}
+por_imdb <- theofficedf %>%
+  group_by(Director) %>%
+  summarise(quant_ep = n(), media_imdb = mean(Ratings)) %>%
+  filter(quant_ep > 4) %>%
+  arrange(desc(media_imdb)) %>%
+  head(10) %>%
+  mutate(Director = reorder(Director, -media_imdb, FUN = max))
+por_imdb <- por_imdb[-7, ]
+
+por_imdb
+```
+```{r}
+graf_por_IMDB <- ggplot(por_imdb, aes(x=Director, y=media_imdb, fill = Director)) + geom_col()
+graf_por_IMDB
+```
+
+
+### qual a influência de guest stars? Eles produzem outliers?
+
+Vamos agora analisar qual a influência de personagens convidados. 
+Vamos criar uma nova coluna que atribui 0 se o episódio não teve nenhum convidado, e atribui nota 1 se teve algum convidado.
+
+```{r}
+theofficedf$famosos <- ifelse(theofficedf$GuestStars == "", 0, 1)
+theofficedf$famosos
+```
+
+Agora vamos plotar a quantidade de visualizações em relação ao número do episódio, atribuindo cores e formatos diferentes para os pontos, de acordo com a coluna famosos.
+```{r}
+theofficedf$famosos <- factor(theofficedf$famosos, levels = unique(theofficedf$famosos))
+
+graf_disp_visu <- ggplot(theofficedf, aes(x = Column1, y = Viewership, color = famosos)) + geom_point(aes(shape = famosos, size = famosos))
+graf_disp_visu
+```
+
+Por fim, vamos realizar um heatmap, no qual x é o episódio da série, e y a temporada relativa da série.
+```{r}
+heatmap <- ggplot(theofficedf, aes(x = Episodes, y=Season, fill=Ratings)) + geom_bin2d()
+heatmap
+```
+
+
+# 3. Parte C - Visão editorial
+
+## Definição do público alvo
+
+Como essa análise será apresentada para a minha turma, à priori, meu público alvo são jovens na feixa etária de 16-20 anos, os quais já possuem um certo conhecimento para a leitura de gráficos. Desse modo, me utilizarei de alguns gráficos um pouco menos comuns a população geral, os quais seriam boxplots e heatmaps.
+
+## Definição das cores
+
+Minha ideia é ambientar o leitor para a estética da série, uma série de certa forma mais antiga. Assim, usarei as cores pasteis, as quais predominam por toda a série.
+Procurando por paletas de cores da série, encontrei uma imagem que tinha uma paeta de cores pastel que me lembrava a série. decidi usa-la.
+```{r}
+cores <- c("#F1F4ED", "#FFAB3B", "#425573", "#5C76A9", "#93BFE4", "#4CD2ED", "#9B6A4C", "#516D5B", "#BC3F47", "#2BA5A8")
+```
+
+## Qualidade Expressiva da peça
+
+Como as cores escolhidas tem um carater mais pastel, o meu modo de comunicação vai ser neutro.
+
+## Recursos de exibição
+
+Minha ideia é produzir os gráficos no R, e utilizar o canvas para juntar todos os gráficos e apresenta-los.
+
+## Representação do dado
+
+Nessa parte, irei refinar todos os gráficos apresentados na parte de análise exploratória.
+
+## Gráficos com as visualizações por temporada
+Os gráficos com as visualizações por temporada são dois: gráfico de barras com o total de visualizações e um boxplot com as visualizações em cada temporada. 
+Vamos trabalhar esses gráficos para ele ficar ainda mais bonito. Meu objetivo é destacar que:
+
+```{r}
+graf_boxplot <- graf_visu_por_ep + 
+  scale_fill_manual(values = c("#93BFE4", "#93BFE4", "#2BA5A8" , "#93BFE4", "#93BFE4", "#93BFE4", "#93BFE4", "#93BFE4",  "#5C76A9")) +
+  guides(fill = "none") +
+  labs(x = "Temporada", 
+       y = "Visualizações (em milhões de telespectadores)", 
+       title = "Visualizações por temporada da série")+
+  theme(axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+graf_boxplot
+```
+
+```{r}
+graf_colunas_visu <- graf_media_visu_por_temp + 
+  labs(x = "Temporada", 
+       y = "Média de visualizações (em milhões)", 
+       title = "Média de visualizações ao longo das temporadas de The Office") +
+  geom_hline(yintercept = 5, color = "red") +
+  scale_fill_manual(values = c("#93BFE4", "#93BFE4", "#93BFE4" , "#93BFE4", "#5C76A9", "#93BFE4", "#93BFE4", "#93BFE4",  "#5C76A9")) +
+  guides(fill = "none") +
+  theme(axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+graf_colunas_visu
+```
+
+## Comparando diretores
+
+```{r}
+graf_barras_media <- graf_dire_por_ep + 
+  scale_fill_manual(values = c( "#BC3F47","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2", "#778FD2")) + 
+  guides(fill = "none") +
+  coord_flip(ylim = c(5,9)) +
+  labs(y = "Média de visualização (em milhões)", x = "Diretores dos filmes", title = "Media de visualização por episódio dirigido", caption = "Apenas diretores com mais de 5 episódios foram considerados") +
+  theme(axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+graf_barras_media
+```
+```{r}
+graf_barras_IMDB <- graf_por_IMDB + 
+  scale_fill_manual(values = c( "#BC3F47","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2","#778FD2", "#778FD2"))  + 
+  coord_flip(ylim = c(7.5,9)) +
+  labs(y = "Média de rating IMDB", x = "Diretores", title = "Média de Rating do IMDB por diretor", caption = "Apenas diretores com mais de 5 episódios foram considerados") + 
+  guides(fill = "none") +
+  theme(axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+graf_barras_IMDB
+```
+
+
+## Analisando convidados especiais
+
+```{r}
+guest_stars <- graf_disp_visu + 
+  scale_shape_manual(values = c(19,18)) + 
+  scale_size_manual(values = c(1.5,3)) +
+  scale_color_manual(values = c("#516D5B", "#9B6A4C"), labels = c("sim", "não")) +
+  labs(x = "Número do episódio", y = "Quantidade de telespectadores", title = "Como se deu a distribuição de Telespectadores a cada episódio?", color = "Houve convidados especiais?") +
+  annotate(geom = "rect",  ymin = 21, ymax = 25, xmin = 60, xmax = 95, fill = "#FFAB3B", alpha = 0.5) +
+  guides(shape = "none", size = "none") +
+  theme(legend.position = "bottom",
+        axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+guest_stars
+```
+
+## Heatmap
+
+```{r}
+heatmap <- ggplot(theofficedf, aes(x = Episodes, y=Season, fill=Ratings)) + geom_bin2d(binwidth = c(0.8, 0.8)) +
+  scale_fill_viridis_c() + 
+  geom_text(aes(label = Ratings), color = "white", size = 5, show.legend = FALSE) +
+  labs(x = "Episódios", y = "Temporada", title = "Notas do IMDB") +
+  guides(fill = "none") +
+  theme(panel.border = element_blank(),
+        plot.background = element_rect(fill = "#F1F4ED"),
+        panel.background = element_rect(fill = "#F1F4ED"),
+        axis.text = element_text(color = "black", size = 10),
+        axis.title = element_text(color = "black", size = 12))
+  
+heatmap
+```
+
+# 4. Parte D
+
+Os gráficos foram gerados com a função ggsave e as alturas e larguras foram definidas para a melhor produção da peça gráfica.
+
+## Finalização
+
+A finalização do trabalho foi feito utilizando o canva.

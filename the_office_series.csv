@@ -1,0 +1,189 @@
+Column1;Season;Episodes;EpisodeTitle;Ratings;Votes;Viewership;Duration;Date;GuestStars;Director
+0;1;1;Pilot;7.5;4936;11.2;23;24/03/2005;;Ken Kwapis
+1;1;2;Diversity Day;8.3;4801;6;23;29/03/2005;;Ken Kwapis
+2;1;3;Health Care;7.8;4024;5.8;22;05/04/2005;;Ken Whittingham
+3;1;4;The Alliance;8.1;3915;5.4;23;12/04/2005;;Bryan Gordon
+4;1;5;Basketball;8.4;4294;5;23;19/04/2005;;Greg Daniels
+5;1;6;Hot Girl;7.7;3854;4.8;23;26/04/2005;Amy Adams;Amy Heckerling
+6;2;1;The Dundies;8.7;4315;9;21;20/09/2005;;Greg Daniels
+7;2;2;Sexual Harassment;8.2;3665;7.13;22;27/09/2005;;Ken Kwapis
+8;2;3;Office Olympics;8.4;3665;8.3;22;04/10/2005;Nancy Carell;Paul Feig
+9;2;4;The Fire;8.4;3607;7.6;22;11/10/2005;Amy Adams;Ken Kwapis
+10;2;5;Halloween;8.1;3392;8;30;18/10/2005;;Paul Feig
+11;2;6;The Fight;8.1;3388;7.9;22;01/11/2005;;Ken Kwapis
+12;2;7;The Client;8.6;3533;7.5;22;08/11/2005;Tim Meadows;Greg Daniels
+13;2;8;Performance Review;8.2;3216;8;22;15/11/2005;;Paul Feig
+14;2;9;E-Mail Surveillance;8.4;3338;8.1;23;22/11/2005;Ken Jeong;Paul Feig
+15;2;10;Christmas Party;8.9;3663;9.7;22;06/12/2005;;Charles McDougall
+16;2;11;Booze Cruise;8.6;3536;8.7;22;05/01/2006;Rob Riggle;Ken Kwapis
+17;2;12;The Injury;9.1;4314;10.3;22;12/01/2006;;Bryan Gordon
+18;2;13;The Secret;8.3;3142;8.7;22;19/01/2006;;Dennie Gordon
+19;2;14;The Carpet;7.8;3118;8.6;22;26/01/2006;;Victor Nelli Jr.
+20;2;15;Boys and Girls;8.2;3091;5.42;22;02/02/2006;;See full summary
+21;2;16;Valentine's Day;8.3;3104;8.95;22;09/02/2006;Conan O'Brien;Greg Daniels
+22;2;17;Dwight's Speech;8.5;3283;8.4;22;02/03/2006;;Charles McDougall
+23;2;18;Take Your Daughter to Work Day;8.3;3212;8.8;21;16/03/2006;;See full summary
+24;2;19;Michael's Birthday;8.1;3094;7.8;22;30/03/2006;;Ken Whittingham
+25;2;20;Drug Testing;8.4;3172;7.8;22;27/04/2006;;Greg Daniels
+26;2;21;Conflict Resolution;8.7;3253;7.4;22;04/05/2006;;Charles McDougall
+27;2;22;Casino Night;9.4;4765;7.6;29;11/05/2006;;Ken Kwapis
+28;3;1;Gay Witch Hunt;9;4133;9.11;23;21/09/2006;;Ken Kwapis
+29;3;2;The Convention;8.2;3027;7.78;22;28/09/2006;Jerome Bettis;Ken Whittingham
+30;3;3;The Coup;8.5;3175;8.89;22;05/10/2006;;Greg Daniels
+31;3;4;Grief Counseling;8;3049;8.83;22;12/10/2006;;Roger Nygard
+32;3;5;Initiation;8.1;2976;8.46;22;19/10/2006;;Randall Einhorn
+33;3;6;Diwali;7.9;3082;8.81;22;02/11/2006;;Miguel Arteta
+34;3;7;Branch Closing;8.6;3021;8.05;31;09/11/2006;;Tucker Gates
+35;3;8;The Merger;8.7;3166;8.63;30;16/11/2006;;Ken Whittingham
+36;3;9;The Convict;8.3;3151;9.07;30;30/11/2006;;Jeffrey Blitz
+37;3;10;A Benihana Christmas;8.8;3343;8.44;42;14/12/2006;;Harold Ramis
+38;3;11;Back from Vacation;8.5;3001;8.8;21;04/01/2007;;Julian Farino
+39;3;12;Traveling Salesmen;8.6;3053;10.12;22;11/01/2007;;Greg Daniels
+40;3;13;The Return;8.8;3211;10.2;28;18/01/2007;;Greg Daniels
+41;3;14;Ben Franklin;8.1;2975;10.11;21;01/02/2007;;Randall Einhorn
+42;3;15;Phyllis' Wedding;8.2;2995;8.84;21;08/02/2007;;Ken Whittingham
+43;3;16;Business School;8.9;3460;8.84;22;15/02/2007;;Joss Whedon
+44;3;17;Cocktails;8.5;2969;8.3;21;22/02/2007;;J.J. Abrams
+45;3;18;The Negotiation;9;3368;6.74;30;05/04/2007;;Jeffrey Blitz
+46;3;19;Safety Training;8.8;3164;7.71;21;12/04/2007;;Harold Ramis
+47;3;20;Product Recall;8.7;3138;7.56;21;26/04/2007;;Randall Einhorn
+48;3;21;Women's Appreciation;8.8;3158;7;29;03/05/2007;;Tucker Gates
+49;3;22;Beach Games;9.2;3641;7.2;28;10/05/2007;;Harold Ramis
+50;3;23;The Job;9.3;3898;7.88;42;17/05/2007;;Ken Kwapis
+51;4;1;Fun Run;8.8;3635;9.7;42;27/09/2007;;Greg Daniels
+52;4;2;Dunder Mifflin Infinity;8.3;2934;8.49;42;04/10/2007;;Craig Zisk
+53;4;3;Launch Party;8.4;2844;8.91;42;11/10/2007;Kevin McHale;See full summary
+54;4;4;Money;8.7;3073;8.5;42;18/10/2007;;Paul Lieberstein
+55;4;5;Local Ad;8.8;3125;8.98;22;25/10/2007;;Jason Reitman
+56;4;6;Branch Wars;8.5;2878;8.39;30;01/11/2007;;Joss Whedon
+57;4;7;Survivor Man;8.2;2775;8.29;30;08/11/2007;;Paul Feig
+58;4;8;The Deposition;8.7;2923;8.86;30;15/11/2007;;Julian Farino
+59;4;9;Dinner Party;9.5;5601;9.22;30;10/04/2008;;Paul Feig
+60;4;10;Chair Model;8;2757;9.81;30;17/04/2008;;Jeffrey Blitz
+61;4;11;Night Out;8.6;2872;7.56;21;24/04/2008;;Ken Whittingham
+62;4;12;Did I Stutter?;8.3;2756;7.67;22;01/05/2008;;Randall Einhorn
+63;4;13;Job Fair;7.8;2627;7.22;30;08/05/2008;;Tucker Gates
+64;4;14;Goodbye, Toby;9.3;3939;8.07;42;15/05/2008;;Paul Feig
+65;5;1;Weight Loss;8.8;3264;9.2;43;25/09/2008;;Paul Feig
+66;5;2;Business Ethics;8.3;2654;8.99;22;09/10/2008;Wendi McLendon-Covey;Jeffrey Blitz
+67;5;3;Baby Shower;8;2621;8.07;22;16/10/2008;;Greg Daniels
+68;5;4;Crime Aid;8.1;2525;7.74;30;23/10/2008;;Jennifer Celotta
+69;5;5;Employee Transfer;8;2600;9.32;22;30/10/2008;;David Rogers
+70;5;6;Customer Survey;8.5;2717;8.35;22;06/11/2008;;Stephen Merchant
+71;5;7;Business Trip;8.2;2516;8.18;30;13/11/2008;;Randall Einhorn
+72;5;8;Frame Toby;8.6;2799;8.4;30;20/11/2008;;See full summary
+73;5;9;The Surplus;8.8;2776;8.33;22;04/12/2008;;Paul Feig
+74;5;10;Moroccan Christmas;8.4;2613;8.79;30;11/12/2008;;Paul Feig
+75;5;11;The Duel;8.7;2711;8.5;30;15/01/2009;;Dean Holland
+76;5;12;Prince Family Paper;8;2615;8.74;22;22/01/2009;;Asaad Kelada
+77;5;13;Stress Relief;9.7;8170;22.91;60;01/02/2009;Cloris Leachman, Jack Black, Jessica Alba;Jeffrey Blitz
+78;5;14;Lecture Circuit: Part 1;8.2;2474;8.39;30;05/02/2009;;Ken Kwapis
+79;5;15;Lecture Circuit: Part 2;8.1;2431;8.89;30;12/02/2009;;Ken Kwapis
+80;5;16;Blood Drive;8;2464;8.63;22;05/03/2009;;Randall Einhorn
+81;5;17;Golden Ticket;8.7;2667;7.51;30;12/03/2009;;Randall Einhorn
+82;5;18;New Boss;8.3;2503;7.95;30;19/03/2009;Idris Elba;Paul Feig
+83;5;19;Two Weeks;8.4;2492;8.45;30;26/03/2009;;Paul Lieberstein
+84;5;20;Dream Team;8.3;2484;7.2;30;09/04/2009;;Paul Feig
+85;5;21;Michael Scott Paper Company;8.7;2718;7.94;22;09/04/2009;;Gene Stupnitsky
+86;5;22;Heavy Competition;8.7;2568;8.24;30;16/04/2009;;Ken Whittingham
+87;5;23;Broke;9.2;3409;7.21;30;23/04/2009;;Steve Carell
+88;5;24;Casual Friday;8.3;2467;7.31;22;30/04/2009;;Brent Forrester
+89;5;25;Cafe Disco;8.7;2814;7.71;30;07/05/2009;;Randall Einhorn
+90;5;26;Company Picnic;9;2954;6.72;30;14/05/2009;;Ken Kwapis
+91;6;1;Gossip;8.8;2866;8.2;30;17/09/2009;;Paul Lieberstein
+92;6;2;The Meeting;8.1;2349;7.33;30;24/09/2009;;Randall Einhorn
+93;6;3;The Promotion;8;2344;7.28;30;01/10/2009;;Jennifer Celotta
+94;6;4;Niagara: Part 1;9.4;4560;9.42;30;08/10/2009;;Paul Feig
+95;6;5;Niagara: Part 2;9.4;3114;9.42;19;08/10/2009;;Paul Feig
+96;6;6;Mafia;7.6;2464;8.1;30;15/10/2009;Mike Starr;David Rogers
+97;6;7;The Lover;8.6;2590;8.52;30;22/10/2009;;Lee Eisenberg
+98;6;8;Koi Pond;8.2;2348;8.2;30;29/10/2009;;Reginald Hudlin
+99;6;9;Double Date;8.1;2314;7.94;30;05/11/2009;;Seth Gordon
+100;6;10;Murder;8.7;2761;7.76;23;12/11/2009;;Greg Daniels
+101;6;11;Shareholder Meeting;8.2;2336;7.43;30;19/11/2009;;Charles McDougall
+102;6;12;Scott's Tots;8.3;2681;8.1;30;03/12/2009;;B.J. Novak
+103;6;13;Secret Santa;8.5;2467;8.51;30;10/12/2009;;Randall Einhorn
+104;6;14;The Banker;6.8;3039;7.29;30;21/01/2010;;Jeffrey Blitz
+105;6;15;Sabre;7.7;2251;7.36;30;04/02/2010;Christian Slater;John Krasinski
+106;6;16;Manager and Salesman;8.1;2223;7.4;30;11/02/2010;;Marc Webb
+107;6;17;The Delivery: Part 1;8.4;2347;9;30;04/03/2010;;Seth Gordon
+108;6;18;The Delivery: Part 2;8.5;2370;9;30;04/03/2010;Mellisa Rauch;Harold Ramis
+109;6;19;St. Patrick's Day;7.7;2196;7.51;30;11/03/2010;;Randall Einhorn
+110;6;20;New Leads;7.7;2154;7.63;23;18/03/2010;;Brent Forrester
+111;6;21;Happy Hour;8.6;2503;7.17;30;25/03/2010;;Matt Sohn
+112;6;22;Secretary's Day;7.8;2168;6.3;30;22/04/2010;;Steve Carell
+113;6;23;Body Language;8;2197;7.01;30;29/04/2010;;Mindy Kaling
+114;6;24;The Cover-Up;8.1;2199;6.84;30;06/05/2010;;Rainn Wilson
+115;6;25;The Chump;7.8;2113;6.6;30;13/05/2010;;Randall Einhorn
+116;6;26;Whistleblower;8;2184;6.6;30;20/05/2010;;Paul Lieberstein
+117;7;1;Nepotism;8.4;2520;8.4;30;23/09/2010;Evan Peters;Jeffrey Blitz
+118;7;2;Counseling;8.2;2272;7.36;30;30/09/2010;;Jeffrey Blitz
+119;7;3;Andy's Play;8.2;2413;6.95;30;07/10/2010;;John Scott
+120;7;4;Sex Ed;7.8;2209;7.36;30;14/10/2010;;Paul Lieberstein
+121;7;5;The Sting;7.8;2156;6.87;30;21/10/2010;Timothy Olyphant;Randall Einhorn
+122;7;6;Costume Contest;8.2;2249;8.07;30;28/10/2010;;Dean Holland
+123;7;7;Christening;7.4;2238;7.65;23;04/11/2010;;Alex Hardcastle
+124;7;8;Viewing Party;7.8;2200;7.15;30;11/11/2010;;Ken Whittingham
+125;7;9;WUPHF.com;7.7;2141;7.28;30;18/11/2010;;See full summary
+126;7;10;China;8.2;2246;7.31;30;02/12/2010;;Charles McDougall
+127;7;11;Classy Christmas;9;2878;7.18;60;09/12/2010;;Rainn Wilson
+128;7;12;Ultimatum;8.3;2282;8.26;30;20/01/2011;;David Rogers
+129;7;13;The Seminar;7.6;2171;7.93;30;27/01/2011;Ricky Gervais;B.J. Novak
+130;7;14;The Search;8.5;2369;7.29;30;03/02/2011;Will Arnett,  Ray Romano, Jim Carrey, Ricky Gervais;See full summary
+131;7;15;PDA;8.4;2347;6.9;22;10/02/2011;;Greg Daniels
+132;7;16;Threat Level Midnight;9.4;4877;6.41;30;17/02/2011;;Tucker Gates
+133;7;17;Todd Packer;7.5;2123;6.12;30;24/02/2011;;Randall Einhorn
+134;7;18;Garage Sale;9.3;3730;7.07;30;24/03/2011;;Steve Carell
+135;7;19;Training Day;7.8;2215;7.87;30;14/04/2011;Will Ferrell;Paul Lieberstein
+136;7;20;Michael's Last Dundies;9;3039;6.85;23;21/04/2011;;Mindy Kaling
+137;7;21;Goodbye, Michael;9.8;8059;8.42;50;28/04/2011;;Paul Feig
+138;7;22;The Inner Circle;7.6;2183;6.9;23;05/05/2011;;Matt Sohn
+139;7;23;Dwight K. Schrute, (Acting) Manager;8.7;2414;6.45;23;12/05/2011;;Troy Miller
+140;7;24;Search Committee;8.8;2623;7.29;42;19/05/2011;;Jeffrey Blitz
+141;8;1;The List;8.1;2366;7.64;23;22/09/2011;;B.J. Novak
+142;8;2;The Incentive;8.1;2200;6.7;23;29/09/2011;;Charles McDougall
+143;8;3;Lotto;7.3;2098;5.82;23;06/10/2011;;John Krasinski
+144;8;4;Garden Party;8.1;2266;6.08;23;13/10/2011;Josh Groban, Stephen Collins;David Rogers
+145;8;5;Spooked;7.5;2024;5.53;23;27/10/2011;;Randall Einhorn
+146;8;6;Doomsday;7.7;1948;6.15;23;03/11/2011;;Troy Miller
+147;8;7;Pam's Replacement;7.7;2077;5.96;23;10/11/2011;;Matt Sohn
+148;8;8;Gettysburg;6.9;2089;5.5;23;17/11/2011;;Jeffrey Blitz
+149;8;9;Mrs. California;7.7;2050;5.71;23;01/12/2011;Maura Tierney;Charlie Grandy
+150;8;10;Christmas Wishes;7.9;2020;5.79;23;08/12/2011;;Ed Helms
+151;8;11;Trivia;7.9;1980;5.9;23;12/01/2012;;B.J. Novak
+152;8;12;Pool Party;8;2139;6.02;23;19/01/2012;;Charles McDougall
+153;8;13;Jury Duty;7.4;1937;5.31;23;02/02/2012;;Eric Appel
+154;8;14;Special Project;7.7;1891;5.19;23;09/02/2012;;David Rogers
+155;8;15;Tallahassee;7.8;1994;4.38;23;16/02/2012;;Matt Sohn
+156;8;16;After Hours;8.1;2068;5.02;23;23/02/2012;;Brian Baumgartner
+157;8;17;Test the Store;7.8;1958;4.95;23;01/03/2012;;Brent Forrester
+158;8;18;Last Day in Florida;7.8;1903;4.89;23;08/03/2012;;Matt Sohn
+159;8;19;Get the Girl;6.6;2203;4.87;23;15/03/2012;;Rainn Wilson
+160;8;20;Welcome Party;7.1;1972;4.39;23;12/04/2012;;Ed Helms
+161;8;21;Angry Andy;7;2107;4.35;23;19/04/2012;;Claire Scanlon
+162;8;22;Fundraiser;7;1902;4.17;23;26/04/2012;;David Rogers
+163;8;23;Turf War;7.6;1832;4.44;23;03/05/2012;Chris Bauer;Daniel Chun
+164;8;24;Free Family Portrait Studio;7.7;1918;4.49;23;10/05/2012;;B.J. Novak
+165;9;1;New Guys;7.6;2074;4.28;23;20/09/2012;;Greg Daniels
+166;9;2;Roy's Wedding;7.1;1963;4.13;23;27/09/2012;;Matt Sohn
+167;9;3;Andy's Ancestry;7.4;1938;4.14;23;04/10/2012;;David Rogers
+168;9;4;Work Bus;7.8;2059;4.28;22;18/10/2012;;Bryan Cranston
+169;9;5;Here Comes Treble;7;2021;4;22;25/10/2012;Stephen Colbert;Claire Scanlon
+170;9;6;The Boat;7.7;1955;4.83;22;08/11/2012;Josh Groban;John Krasinski
+171;9;7;The Whale;7.6;1872;4.16;22;15/11/2012;;See full summary
+172;9;8;The Target;7.8;1928;3.88;22;29/11/2012;;Brent Forrester
+173;9;9;Dwight Christmas;8.4;2204;4.16;22;06/12/2012;;Charles McDougall
+174;9;10;Lice;7.6;1952;4.54;22;10/01/2013;Julius Winfield Erving;Rodman Flender
+175;9;11;Suit Warehouse;7.8;1920;4.15;22;17/01/2013;;Matt Sohn
+176;9;12;Customer Loyalty;7.9;1984;4.19;22;24/01/2013;;Kelly Cantley-Kashima
+177;9;13;Junior Salesman;7.6;1866;4.45;22;31/01/2013;;David Rogers
+178;9;14;Vandalism;7.5;1866;3.97;22;31/01/2013;;Lee Kirk
+179;9;15;Couples Discount;7.3;1888;4.15;22;07/02/2013;;Troy Miller
+180;9;16;Moving On;8.1;2089;4.06;42;14/02/2013;;Jon Favreau
+181;9;17;The Farm;7.5;2189;3.54;22;14/03/2013;;Paul Lieberstein
+182;9;18;Promos;8;1924;3.44;22;04/04/2013;Ryan Howard;Jennifer Celotta
+183;9;19;Stairmageddon;8;1985;3.83;22;11/04/2013;;Matt Sohn
+184;9;20;Paper Airplane;8;2007;3.25;22;25/04/2013;;Jesse Peretz
+185;9;21;Livin' the Dream;9;2831;3.51;42;02/05/2013;Michael Imperioli ;Jeffrey Blitz
+186;9;22;A.A.R.M.;9.5;3914;4.56;43;09/05/2013;;David Rogers
+187;9;23;Finale;9.8;10515;5.69;51;16/05/2013;Joan Cusack, Ed Begley Jr, Rachel Harris, Nancy Walls;Ken Kwapis
